@@ -1,6 +1,5 @@
 <template>
-  <div class="bg-gray-100 font-sans">
-    <Header />
+  <AppLayout>
     <Hero
       :formattedCryptoData="formattedCryptoData"
       :title="'Trade Crypto with Confidence'"
@@ -14,22 +13,20 @@
     <FAQ />
     <Newsletter />
     <ContactForm />
-    <Footer />
-  </div>
+  </AppLayout>
 </template>
 
 <script setup>
 import ContactForm from "@/Components/web/ContactForm.vue";
 import CryptoMarketUpdate from "@/Components/web/CryptoMarketUpdate.vue";
 import FAQ from "@/Components/web/FAQ.vue";
-import Header from "@/Components/web/Header.vue";
 import Hero from "@/Components/web/Hero.vue";
 import HowItWorks from "@/Components/web/HowItWorks.vue";
 import KeyFeatures from "@/Components/web/KeyFeatures.vue";
 import Newsletter from "@/Components/web/Newsletter.vue";
 import Testimonials from "@/Components/web/Testimonials.vue";
 import TradingPreview from "@/Components/web/TradingPreview.vue";
-import Footer from "@/Components/web/Footer.vue";
+import AppLayout from "@/Layouts/AppLayout.vue";
 import { computed } from "vue";
 
 const props = defineProps({
@@ -142,9 +139,3 @@ const formattedCryptoData = computed(() => {
   });
 });
 </script>
-
-<style>
-.gradient-bg {
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-}
-</style>

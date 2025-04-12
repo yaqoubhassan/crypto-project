@@ -22,7 +22,7 @@ class WebController extends Controller
                 // If not in cache, fetch from API
                 $response = Http::get('rest.coincap.io/v3/assets', [
                     'limit' => 10,
-                    'apiKey' => '9a3183464f93fef779a0072c5114684143a9dcaa3a2e0301494170a256f7c745'
+                    'apiKey' => env('COINCAP_APIKEY')
                 ]);
 
                 // Check if response is successful
@@ -47,5 +47,10 @@ class WebController extends Controller
     public function features()
     {
         return Inertia::render('Web/Features');
+    }
+
+    public function markets()
+    {
+        return Inertia::render('Web/Markets');
     }
 }

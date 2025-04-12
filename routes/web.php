@@ -7,6 +7,7 @@ use App\Http\Controllers\WebController;
 
 Route::get('/', [WebController::class, 'home'])->name('home');
 Route::get('features', [WebController::class, 'features'])->name('features');
+Route::get('markets', [WebController::class, 'markets'])->name('markets');
 Route::get('register', [RegisterController::class, 'create'])->name('register');
 
 // Public routes

@@ -35,14 +35,6 @@ const legalLinks = ref([
   { text: "Fee Schedule", url: "#fees" },
 ]);
 
-const paymentMethods = ref([
-  { name: "Visa", image: "/assets/images/visa.png" },
-  { name: "Mastercard", image: "/assets/images/mastercard.png" },
-  { name: "PayPal", image: "/assets/images/paypal.svg" },
-  { name: "Bitcoin", image: "/assets/images/bitcoin-logo.png" },
-  { name: "Ethereum", image: "/assets/images/ethereum-logo.png" },
-]);
-
 const currentYear = computed(() => new Date().getFullYear());
 </script>
 
@@ -112,15 +104,6 @@ const currentYear = computed(() => new Date().getFullYear());
           <p class="text-gray-400 mb-4 md:mb-0">
             &copy; {{ currentYear }} CryptoX. All rights reserved.
           </p>
-          <div class="flex space-x-4">
-            <img
-              v-for="(payment, index) in paymentMethods"
-              :key="index"
-              :src="payment.image"
-              :alt="payment.name"
-              class="h-6"
-            />
-          </div>
         </div>
       </div>
     </div>

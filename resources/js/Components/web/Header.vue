@@ -71,8 +71,21 @@ const isActive = (routeName) => {
           >
           <Link
             :href="route('features')"
-            class="text-gray-700 hover:text-blue-600 transition duration-300"
+            :class="{
+              'text-blue-600 font-medium': isActive('Web/Features'),
+              'text-gray-700 hover:text-blue-600': !isActive('Web/Features'),
+            }"
+            class="transition duration-300"
             >Features</Link
+          >
+          <Link
+            :href="route('markets')"
+            :class="{
+              'text-blue-600 font-medium': isActive('Web/Markets'),
+              'text-gray-700 hover:text-blue-600': !isActive('Web/Markets'),
+            }"
+            class="transition duration-300"
+            >Markets</Link
           >
           <a
             href="#how-it-works"
@@ -80,9 +93,9 @@ const isActive = (routeName) => {
             >How It Works</a
           >
           <a
-            href="#testimonials"
+            href="#contact-us"
             class="text-gray-700 hover:text-blue-600 transition duration-300"
-            >Testimonials</a
+            >Contact Us</a
           >
         </div>
 
@@ -116,6 +129,12 @@ const isActive = (routeName) => {
             @click="isMenuOpen = false"
             >Features</Link
           >
+          <Link
+            :href="route('markets')"
+            class="text-gray-700 hover:text-blue-600 transition duration-300"
+            @click="isMenuOpen = false"
+            >Markets</Link
+          >
           <a
             href="#how-it-works"
             class="text-gray-700 hover:text-blue-600 transition duration-300"
@@ -126,7 +145,7 @@ const isActive = (routeName) => {
             href="#testimonials"
             class="text-gray-700 hover:text-blue-600 transition duration-300"
             @click="isMenuOpen = false"
-            >Testimonials</a
+            >Contact Us</a
           >
 
           <!-- Mobile Auth Buttons - Now vertical with padding -->
